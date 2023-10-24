@@ -10,11 +10,15 @@ const responsepOfapi = await fetch(url + "/user/authenticated",
 }
 
 );
+
 const userAuth = await responsepOfapi.json();
 return userAuth;
 }
 
 const getUsers = async () =>{
-
+    const responsepOfApi = await fetch(url + "/users", {cache:"no cache"})
+    const useAuth = await responsepOfApi.json();
+    return useAuth;
 }
+
 export { getUsers, getUserAuthenticated };
