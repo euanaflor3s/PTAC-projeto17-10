@@ -8,8 +8,8 @@ const responsepOfapi = await fetch(url + "/user/authenticated",
     headers:{"content-Type": "application/json"},
     body: JSON.stringify(userLogin)
 }
-
 );
+
 
 const userAuth = await responsepOfapi.json();
 return userAuth;
@@ -21,4 +21,18 @@ const getUsers = async () =>{
     return useAuth;
 }
 
-export { getUsers, getUserAuthenticated };
+const postUser = async (user) => {
+    try {
+        const responsepOfApi = await fetch(url + "/user", {
+            method: 'POST',
+            headers: { 'Content-Type': 'Application/json' },
+            body: JSON.stringify(user)
+        });
+        const userSave = await responsepOfApi.json();
+        return userSave;
+    } catch {
+        return null;
+    }
+}
+
+export { getUsers, getUserAuthenticated, postUser };
