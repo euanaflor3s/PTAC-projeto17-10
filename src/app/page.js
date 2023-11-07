@@ -8,6 +8,7 @@ import "./global.css"
 
 export default function Login() {
   const [user, setUser] = useState({
+    name: '',
     email: '',
     password: '',
   });
