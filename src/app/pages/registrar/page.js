@@ -3,12 +3,22 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../../global.css"
 
-const Formulario = () => {
+export default function Registrar() {
+    const [user, setUser] = useState({
+      name: '',
+      email: '',
+      password: '',
+    });
 
-  const handlerLogin = async (e) => { // representa o evento de envio do formulário e evita que a pag seja recarregada.
-    e.preventDefault();
-    toast.success('registrado com sucesso')  
-  }
+    const { push } = useRouter()
+
+
+
+
+  
+
+
+
   return (
     <div className="body">
       <h1>Página de registro</h1>
@@ -37,5 +47,4 @@ const Formulario = () => {
   )
 }
 
-export default Formulario; 
 
