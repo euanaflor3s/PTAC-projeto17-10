@@ -1,4 +1,6 @@
 'use client'
+import { postUser } from '@/app/functions/handlerAcessAPI';
+import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../../global.css"
@@ -10,13 +12,17 @@ export default function Registrar() {
       password: '',
     });
 
-    const { push } = useRouter()
+    const { push } = useRouter();
 
-
-
-
-  
-
+    const handlerFormSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        await postUser(user);
+        return push("/pages/dashboard");
+      } catch {
+        return toast.error("Erro");
+      }
+    };
 
 
   return (
