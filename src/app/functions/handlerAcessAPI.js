@@ -28,11 +28,13 @@ const postUser = async (user) => {
             headers: { 'Content-Type': 'Application/json' },
             body: JSON.stringify(user)
         });
+
         const userSave = await responsepOfApi.json();
         return userSave;
     } catch {
+
         return null;
     }
-}
+};
 
 export { getUsers, getUserAuthenticated, postUser };
