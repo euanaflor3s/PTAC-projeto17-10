@@ -38,7 +38,7 @@ const postUser = async (user) => {
     }
 };
 
-const updateUser = async(user, id) => {
+const updateUser = async (user, id) => {
     try{
         const responsepOfApi = await fetch(url + "/user"+ id,{
             method: 'PUT',
