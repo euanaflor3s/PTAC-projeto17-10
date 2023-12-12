@@ -17,7 +17,6 @@ export default function Login() {
     e.preventDefault();
     try {
       const userAuth = await handlerAcessUser(user);
-      console.log(user)
       if(userAuth.token === undefined){
         toast.error("Ocorreu um erro no email ou senha!")
       }
