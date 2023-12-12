@@ -42,7 +42,7 @@ export default function Login() {
 
       <div className="ana">
 
-        <input className="inputs"
+        <input className="input"
           placeholder='Insira seu nome'
           type="name"
           onChange={(e) => { setUser({ ...user, nome: e.target.value }) }}>
@@ -52,7 +52,7 @@ export default function Login() {
 
       <div className="ana">
 
-        <input className="inputs"
+        <input className="input"
           placeholder='Insira seu E-mail'
           type="email"
           onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
@@ -62,7 +62,7 @@ export default function Login() {
 
         <div className="ana">
 
-        <input className="inputs"
+        <input className="input"
           placeholder='Insira sua senha'
           type='password'
           onChange={(e) => { setUser({ ...user, senha: e.target.value }) }}>
@@ -70,9 +70,11 @@ export default function Login() {
 
         </div>
 
+      
+
         <br></br>
 
-        <button className="botao">Entrar</button>
+        <button className="btn">Entrar</button>
 
         
       </form>
