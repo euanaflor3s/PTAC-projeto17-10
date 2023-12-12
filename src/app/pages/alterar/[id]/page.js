@@ -7,7 +7,7 @@ import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateUser } from '@/app/functions/handlerAcessAPI';
 
-export default function alterar({params}) {
+export default function Alterar({params}) {
 
   const [user,setUser] = useState({
     name:'',
@@ -21,8 +21,7 @@ export default function alterar({params}) {
       e.preventDefault();  // cancelar um evento
       try{
         await updateUser(user, params.id)
-
-        await new Promisse((resolve)=>{
+        await new Promise((resolve)=>{
           toast.success("Usuário alterado!")
           setTimeout(resolve, 5000)
         })
@@ -38,18 +37,18 @@ export default function alterar({params}) {
         <h1>Página para alterar usuário</h1>
         <form onSubmit={handlerLogin}>
   
-    <div className= "sla">
-        <input  placeholder='nome' type="nome" className= "inputs" onChange={(e) => { setUser({ ...user, nome: e.target.value }) }} />
+    <div className= "ana">
+        <input  placeholder='nome' type="name" className= "inputs" onChange={(e) => { setUser({ ...user, name: e.target.value }) }} />
          
           </div>
   
-          <div className= "sla">
+          <div className= "ana">
           <input  placeholder='E-mail' type="email" className= "inputs" onChange={(e) => { setUser({ ...user, email: e.target.value }) }} />
          
     </div>
   
-    <div className= "sla">
-          <input placeholder='Senha'  type='password' className= "inputs" onChange={(e) => { setUser({ ...user, senha: e.target.value }) }} />
+    <div className= "ana">
+          <input placeholder='Senha'  type='password' className= "inputs" onChange={(e) => { setUser({ ...user, password: e.target.value }) }} />
        
           </div>
   
