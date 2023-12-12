@@ -116,6 +116,7 @@ nav ul{
     background-color: lightblue;
     padding: 30px;
     border:1px solid rgb(22, 167, 229);
+    list-style: none;
    
 
 }
@@ -136,16 +137,30 @@ text-shadow:0px 0px 1px rgb(22, 167, 229);
 }
 
 .menu li ul{
-    position:absolute;
+position:absolute;
 top:25px;
 left:0;
 background-color:#fff;
 display:none;
+list-style: none;
 }
 
 .sair{
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+.ana{
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: #70dfa1;
+    border-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 15px;
 }
 
