@@ -9,9 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 export default alterar ({params}){
 
   const [user,setUser] = useState({
-    name:'',
+    nome:'',
     email:'',
-    password:'',
+    senha:'',
    });
 
    const {push} =useRouter()

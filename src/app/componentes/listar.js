@@ -1,4 +1,4 @@
-import link from "next/link"
+import Link from "next/link"
 export default async function Listar({users}){
     await new Promise((resolve) => setTimeout(resolve,4000));
     return(

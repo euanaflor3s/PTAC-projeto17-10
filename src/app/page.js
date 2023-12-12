@@ -8,7 +8,6 @@ import "./global.css"
 
 export default function Login() {
   const [user, setUser] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -18,6 +17,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const userAuth = await handlerAcessUser(user);
+      console.log(user)
       if(userAuth.token === undefined){
         toast.error("Ocorreu um erro no email ou senha!")
       }
@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <body>
 
-    <div class="body">
+    <div className="body">
 
       <form onSubmit={handlerLogin}>
 
@@ -40,23 +40,13 @@ export default function Login() {
       
       <h1>TELA DE LOGIN</h1>
 
-      <div className="ana">
-
-        <input className="input"
-          placeholder='Insira seu nome'
-          type="name"
-          onChange={(e) => { setUser({ ...user, nome: e.target.value }) }}>
-        </input>
-
-        </div>
 
       <div className="ana">
 
         <input className="input"
           placeholder='Insira seu E-mail'
           type="email"
-          onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
-        </input>
+          onChange={(e) => { setUser({ ...user, email: e.target.value }) }}/>
 
         </div>
 
@@ -65,8 +55,7 @@ export default function Login() {
         <input className="input"
           placeholder='Insira sua senha'
           type='password'
-          onChange={(e) => { setUser({ ...user, senha: e.target.value }) }}>
-        </input>
+          onChange={(e) => { setUser({ ...user,     password: e.target.value }) }}/>
 
         </div>
 

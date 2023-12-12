@@ -7,9 +7,9 @@ import "../../global.css"
 
 export default function Registrar() {
     const [user, setUser] = useState({
-      name: '',
+      nome: '',
       email: '',
-      password: '',
+      senha: '',
     });
 
     const { push } = useRouter();
@@ -28,21 +28,18 @@ export default function Registrar() {
   return (
     <div className="body">
       <h1>Página de registro</h1>
-      <form onSubmit={handlerLogin }>   
+      <form onSubmit={handlerFormSubmit }>   
 
   <div className= "sla">
-      <input  placeholder='nome' type="nome" className= "inputs" >
-        </input>
+      <input  placeholder='nome' type="nome" className= "inputs" />
         </div>
 
         <div className= "sla">
-        <input  placeholder='E-mail' type="email" className= "inputs">
-        </input>
+        <input  placeholder='E-mail' type="email" className= "inputs"/>
   </div>
 
   <div className= "sla">
-        <input placeholder='Senha'  type='password' className= "inputs" >
-        </input>
+        <input placeholder='Senha'  type='password' className= "inputs" />
         </div>
 
         <button className='entrar'>Registrar</button>
