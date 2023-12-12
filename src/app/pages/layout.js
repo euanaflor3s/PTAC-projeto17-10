@@ -18,7 +18,6 @@ export default function Layout({children}){ // representa os elementos passados 
                 <ul className="menu">
                 <li><Link href="/pages/dashboard" id="rota">HOME</Link></li>
 <li><Link href="/pages/registrar" id="rota">REGISTRAR</Link></li>
-<li><Link href="/pages/alterar" id="rota">ALTERAR</Link></li>
 <li><button className="sair" onClick={sair}>Sair</button></li>
 </ul>
 </nav>

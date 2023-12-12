@@ -1,25 +1,37 @@
 'use client'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "../../global.css"
+import "../../../global.css"
 import { useRouter } from "next/navigation";
-import { ToastContainer } from 'React-toastify';
+import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateUser } from '@/app/functions/handlerAcessAPI';
 
-export default alterar ({params}){
+export default function alterar({params}) {
 
   const [user,setUser] = useState({
-    nome:'',
+    name:'',
     email:'',
-    senha:'',
+    password:'',
    });
 
    const {push} =useRouter()
  
    const handlerLogin = async (e) => {
       e.preventDefault();  // cancelar um evento
-      toast.success('Alterado com sucesso')
-    }
+      try{
+        await updateUser(user, params.id)
+
+        await new Promisse((resolve)=>{
+          toast.success("Usuário alterado!")
+          setTimeout(resolve, 5000)
+        })
+        return push("/pages/dashboard")
+      }
+      catch{
+        return toast.error("Usuário não foi alterado!")
+      }
+   }
     
     return (
       <div className="body">
@@ -27,18 +39,18 @@ export default alterar ({params}){
         <form onSubmit={handlerLogin}>
   
     <div className= "sla">
-        <input  placeholder='nome' type="nome" className= "inputs" >
-          </input>
+        <input  placeholder='nome' type="nome" className= "inputs" onChange={(e) => { setUser({ ...user, nome: e.target.value }) }} />
+         
           </div>
   
           <div className= "sla">
-          <input  placeholder='E-mail' type="email" className= "inputs">
-          </input>
+          <input  placeholder='E-mail' type="email" className= "inputs" onChange={(e) => { setUser({ ...user, email: e.target.value }) }} />
+         
     </div>
   
     <div className= "sla">
-          <input placeholder='Senha'  type='password' className= "inputs" >
-          </input>
+          <input placeholder='Senha'  type='password' className= "inputs" onChange={(e) => { setUser({ ...user, senha: e.target.value }) }} />
+       
           </div>
   
           <button className='entrar'>Alterar</button> <button className='voltar'><a className='apvolt' href="/pages/dashboard">Voltar</a></button>
